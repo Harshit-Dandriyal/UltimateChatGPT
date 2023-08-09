@@ -8,11 +8,10 @@ export default function LoginPage() {
     const [user, setUser] = React.useState({
         email: "",
         password:"",
-        username: "",
     })
 
 
-    const onLogin =  () => {
+    const onLogin = async () => {
      
     }
     return (
@@ -20,16 +19,15 @@ export default function LoginPage() {
         <div className="flex flex-col justify-center items-center h-screen gap-3">
             <h1 className="text-3xl">Sign up</h1>
             <hr/>
-           <label htmlFor="username">username</label>
-           <input placeholder="username" className="p-3 rounded-lg text-black" id= "username" type="text" value= {user.username} onChange={(e)=> setUser({...user, username: e.target.value})}/>
+      <label htmlFor="email">email</label>
+           <input placeholder="email" className="p-3 rounded-lg text-black" id= "email" type="email" value= {user.email} onChange={(e)=> setUser({...user, email: e.target.value})}/>
                   <label htmlFor="password">password</label>
            <input placeholder="password" className="p-3 rounded-lg text-black" id= "password" type= "password" value= {user.password} onChange={(e)=> setUser({...user, password: e.target.value})}/>
-                  <label htmlFor="email">email</label>
-           <input placeholder="email" className="p-3 rounded-lg text-black" id= "email" type="email" value= {user.email} onChange={(e)=> setUser({...user, email: e.target.value})}/>
+            
 
-           <button className="p-2 px-16 bg-red-700 rounded-lg mt-6" onClick={onSignup}> Submit </button>
+           <button className="p-2 px-16 bg-red-700 rounded-lg mt-6" onClick={onLogin}> Submit </button>
 
-           <Link className="mt-4" href="/login">Visit Login</Link>
+           <Link className="mt-4" href="/signup">Visit SignUp Page</Link>
         </div>
         </>
     )
